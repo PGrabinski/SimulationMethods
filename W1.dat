@@ -1,0 +1,85 @@
+For N equal: 10(10^1) 
+The first integral: 1.14847 with statistical error: 0.188355
+The first integral: 0.8611 with statistical error: 0.302452
+The first integral: 4.92477 with statistical error: 2.04957
+
+For N equal: 100(10^2) 
+The first integral: 0.92027 with statistical error: 0.0370498
+The first integral: 1.01309 with statistical error: 0.111505
+The first integral: 3.98285 with statistical error: 0.530943
+
+For N equal: 1000(10^3) 
+The first integral: 1.00525 with statistical error: 0.0154018
+The first integral: 0.9267 with statistical error: 0.0329521
+The first integral: 4.81062 with statistical error: 0.224829
+
+For N equal: 10000(10^4) 
+The first integral: 1.00314 with statistical error: 0.00484842
+The first integral: 0.951792 with statistical error: 0.0107714
+The first integral: 4.87861 with statistical error: 0.0734724
+
+For N equal: 100000(10^5) 
+The first integral: 0.999355 with statistical error: 0.00152444
+The first integral: 0.954428 with statistical error: 0.00341663
+The first integral: 4.88933 with statistical error: 0.0233064
+
+For N equal: 1000000(10^6) 
+The first integral: 0.999836 with statistical error: 0.000483105
+The first integral: 0.951628 with statistical error: 0.00107721
+The first integral: 4.90197 with statistical error: 0.00739853
+
+For N equal: 10000000(10^7) 
+The first integral: 0.999985 with statistical error: 0.000152865
+The first integral: 0.95 with statistical error: 0.00034019
+The first integral: 4.90159 with statistical error: 0.00233883
+
+For N equal: 100000000(10^8) 
+The first integral: 1.00005 with statistical error: 4.83465e-05
+The first integral: 0.949581 with statistical error: 0.00010752
+The first integral: 4.89995 with statistical error: 0.000739206
+
+For N equal: 10(10^1) 
+The first integral: 1.14847 with statistical error: 0.188355
+The first integral: 0.8611 with statistical error: 0.302452
+The first integral: 4.92477 with statistical error: 2.04957
+
+For N equal: 100(10^2) 
+The first integral: 0.92027 with statistical error: 0.0370498
+The first integral: 1.01309 with statistical error: 0.111505
+The first integral: 3.98285 with statistical error: 0.530943
+
+For N equal: 1000(10^3) 
+The first integral: 1.00525 with statistical error: 0.0154018
+The first integral: 0.9267 with statistical error: 0.0329521
+The first integral: 4.81062 with statistical error: 0.224829
+
+For N equal: 10000(10^4) 
+The first integral: 1.00314 with statistical error: 0.00484842
+The first integral: 0.951792 with statistical error: 0.0107714
+The first integral: 4.87861 with statistical error: 0.0734724
+
+For N equal: 100000(10^5) 
+The first integral: 0.999355 with statistical error: 0.00152444
+The first integral: 0.954428 with statistical error: 0.00341663
+The first integral: 4.88933 with statistical error: 0.0233064
+
+For N equal: 1000000(10^6) 
+The first integral: 0.999836 with statistical error: 0.000483105
+The first integral: 0.951628 with statistical error: 0.00107721
+The first integral: 4.90197 with statistical error: 0.00739853
+
+For N equal: 10000000(10^7) 
+The first integral: 0.999985 with statistical error: 0.000152865
+The first integral: 0.95 with statistical error: 0.00034019
+The first integral: 4.90159 with statistical error: 0.00233883
+
+For N equal: 100000000(10^8) 
+The first integral: 1.00005 with statistical error: 4.83465e-05
+The first integral: 0.949581 with statistical error: 0.00010752
+The first integral: 4.89995 with statistical error: 0.000739206
+
+For N equal: 1000000000(10^9) 
+The first integral: 1.00001 with statistical error: 1.52874e-05
+The first integral: -nan with statistical error: -nan
+The first integral: 4.89937 with statistical error: 0.000233717
+
