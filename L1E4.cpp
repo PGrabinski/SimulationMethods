@@ -4,11 +4,12 @@
 
 using namespace std;
 const double e3 = exp(-3);
+const int inf = 20;
 
 double expectN(int N){
   gsl_rng * r = gsl_rng_alloc (gsl_rng_mt19937);
   int counter = 0;
-  int counters[100];
+  int counters[inf];
   int rest = 0;
   double productTemp = 0;
   double productN = 0;
@@ -20,13 +21,13 @@ double expectN(int N){
       counter++;
     }
     productN += counter;
-    if(counter < 100) {
+    if(counter < inf) {
 		counters[counter]++;
 	} else {
 		rest++;
 	}
   }
-  for(int i=1; i < 100; i++) {
+  for(int i=1; i < inf; i++) {
 	  cout << "For N= " << i << " the probability is: " << (counters[i]/(double N)) << "\n";
   } else {
 	  cout << "For N>=100 the probability is: " << (rest/(double N)) << "\n";
