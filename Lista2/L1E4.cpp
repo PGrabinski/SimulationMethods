@@ -16,7 +16,7 @@ double expectN(int N){
   for(int i = 0; i<N; i++){
     counter = 0;
     productTemp = 0;
-    while (productTemp < e3){
+    while (productTemp > e3){
       productTemp *=  gsl_rng_uniform (r);
       counter++;
     }
@@ -28,16 +28,16 @@ double expectN(int N){
 	}
   }
   for(int i=1; i < inf; i++) {
-	  cout << "For N= " << i << " the probability is: " << (counters[i]/(double N)) << "\n";
-  } else {
-	  cout << "For N>=100 the probability is: " << (rest/(double N)) << "\n";
+    cout << "For N= " << i << " the probability is: " << (counters[i]/ N) << "\n";
   }
-  return sumN/N;
+	cout << "For N>=100 the probability is: " << (rest/N) << "\n";
+
+  return productN/N;
 }
 
 
 int main() {
   gsl_rng_env_setup();
-  count << expectN(100000);
+  cout << expectN(1000);
   return 0;
 }
