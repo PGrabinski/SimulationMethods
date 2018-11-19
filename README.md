@@ -1,8 +1,9 @@
 # SimulationMethods
 University Course: Simulation Methods
+Taken during the winter term of the 2018/2019 academic year.
 
-I have attended the course voluntarly and not finished it fully.
-It focuses on the Random Number Generation and its role in physical simulations.
+It focuses on the Random Number Generation and Monte Carlo methods with special focus on the physical simulations.
 
-The project was supposed to test different RNGs on the Wolff algorithm for 2D Ising Model. So far, I have only written the algorithm without different tests.
-Probably, I will come back to this during the next academic year.
+There are some smaller tasks in the Lists and two different projects.
+
+The first project the test of different RNGs on the Wolff algorithm for 2D Ising Model.

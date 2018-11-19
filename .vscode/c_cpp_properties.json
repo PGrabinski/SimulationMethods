@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/Project1",
+                    "${workspaceFolder}/Project1/Source",
+                    "${workspaceFolder}/Project1/Headers"
+                ]  ,
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/Project1/Source",
+                "${workspaceFolder}/Project1/Headers"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "g++"
+        }
+    ],
+    "version": 4
+}
