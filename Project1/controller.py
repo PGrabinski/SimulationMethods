@@ -1,8 +1,8 @@
 import subprocess
 import time;
 
-rngs = ['mt', 'rnlx0', 'r250']
-samples = 10**2
+rngs = ['mt']#, 'rnlx0', 'r250']
+samples = 10**6
 
 def runProcess(exe):    
     p = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

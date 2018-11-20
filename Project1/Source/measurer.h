@@ -11,11 +11,9 @@ class Measurer{
         double * totalEnergy;
         // Total magnetization
         double * totalMagnetization;
-        // Total heat capacity
-        double * totalHeat;
         // Total H^2
         double * totalH2;
-        std::tuple<double, double> measureHeat(double temperature);
+        // std::tuple<double, double> measureHeat(double temperature, double heat);
     public:
         Measurer();
         Measurer(int samplesNumber);

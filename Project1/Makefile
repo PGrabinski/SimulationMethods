@@ -1,5 +1,5 @@
 output: main.o helper.o lattice.o rng.o measurer.o wolfer.o
-	g++ Source/*.o -std=c++17 -lgsl -lm -lgslcblas -o wolf_sim
+	g++ Source/*.o -std=c++17 -lgsl -lm -lgslcblas -fopenmp -o wolf_sim
 
 main.o: Source/main.cpp
 	g++ -c Source/main.cpp -std=c++17 -lgsl -lm -lgslcblas -o Source/main.o
@@ -17,7 +17,7 @@ rng.o: Source/rng.cpp Source/rng.h
 	g++ -c Source/rng.cpp -std=c++17 -lgsl -lm -lgslcblas -o Source/rng.o
 
 wolfer.o: Source/wolfer.cpp Source/wolfer.h
-	g++ -c Source/wolfer.cpp -std=c++17 -lgsl -lm -lgslcblas -o Source/wolfer.o
+	g++ -c Source/wolfer.cpp -std=c++17 -fopenmp -lgsl -lm -lgslcblas -o Source/wolfer.o
 	
 clean:
 	rm Source/*.o wolf_sim

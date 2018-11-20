@@ -96,6 +96,7 @@ void Wolfer::addConnection(int xPosition, int yPosition, int xMove, int yMove){
 // Controls the Wolf algorithm for given temperature
 void Wolfer::timeControl(double temperature){
     setTemperature(temperature);
+
     for(int step=0; step < samplesPerTemperature; step++){
         lattice.shuffleLattice();
         // lattice.printLattice();
