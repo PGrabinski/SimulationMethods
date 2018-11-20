@@ -2,15 +2,33 @@
 
 #include <gsl/gsl_rng.h>
 #include <iostream>
+#include <stdexcept>
 
-Lattice::Lattice(){
-    r = gsl_rng_alloc (gsl_rng_mt19937);
+Lattice::Lattice(gsl_rng * s){
+    r = s;
+    rng = NULL;
 };
+
+Lattice::Lattice(RNG& newRng){
+    r = NULL;
+    rng = newRng;
+};
+
+Lattice::Lattice(){};
 
 void Lattice::shuffleLattice(){
   for(int i=0; i<latticeSize; i++){
     for(int j=0; j<latticeSize; j++){
-      if(gsl_rng_uniform (r)<0.5) latticeArray[i][j] = 1;
+      double sampleProbability = 0.0;
+      if(r == NULL){
+        sampleProbability = rng.rnlx();
+      } else if(r != NULL){
+        sampleProbability = gsl_rng_uniform (r);
+      } else {
+        std::cout << "Problem with RNG!\n";
+        throw std::runtime_error("Wrong RNG");
+      }
+      if(sampleProbability<0.5) latticeArray[i][j] = 1;
       else  latticeArray[i][j] = -1;
     }
   }

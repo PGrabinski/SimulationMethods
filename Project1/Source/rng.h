@@ -5,11 +5,13 @@ class RNG{
     private:
          double carry, dseeds[24];
         int i24, j24, count24, nskip;
-        static const long two24 = 16777216;
-        static const double twom24= 1.0/16777216.0;
-        static const double twom12= 1.0/4096.0;
-    public:
+        long two24;
+        double twom24;
+        double twom12;
         void setseeds(long seed, int lux);
+    public:
+        RNG();
+        RNG(int lux);
         double rnlx();
 
 };

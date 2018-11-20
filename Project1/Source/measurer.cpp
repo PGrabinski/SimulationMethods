@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
+#include <tuple>
 
 Measurer::Measurer(){};
 
@@ -14,7 +15,7 @@ Measurer::Measurer(int samples){
     totalH2 = new double[samples];
     totalHeat = new double[samples];
     latticeSize = lattice.getLatticeSize();
-    std::cout << "Energy" << "," << "Magnetization" << "," << "Heat" << ","  << "Temperature" << "\n";
+    // std::cout << "Energy" << "," << "EnergyDev" << "," << "Magnetization" << "," << "Heat" << "," < ","  << "HeatDev" << "Temperature" << "\n";
 };
 
 // Measure energy difference after a single flip
@@ -34,7 +35,6 @@ void Measurer::measureObservables(Lattice& lattice, double temperature, int step
     double magnetization = 0.0;
     double tempEnergy = 0.0;
     int tempSpin = 0;
-    double L2 = latticeSize*latticeSize;
     // lattice.printLattice();
     for(int i=0;i<latticeSize;i++){
         for(int j=0;j<latticeSize;j++){
@@ -51,6 +51,30 @@ void Measurer::measureObservables(Lattice& lattice, double temperature, int step
     totalHeat[step] = dEnergySquared - dEnergy*dEnergy;
 }
 
+// Measure the heat and its variance
+std::tuple<double, double> Measurer::measureHeat(double temperature){
+    int energySamples = 10.0;
+    int heatSamples = samplesNumber/energySamples;
+    double temporaryHeat = 0.0;
+    double finalHeatEstimator = 0.0;
+    double finalHeatEstimatorSquared = 0.0;
+    double energyNormalization = energySamples * std::pow(latticeSize,2) * std::pow(temperature,2);
+    for(int i=0;i<heatSamples;i++){
+        temporaryHeat = 0.0;
+        for(int j=0;j<energySamples;j++){
+            temporaryHeat += totalH2[i*energySamples + j] - totalEnergy[i*energySamples + j] * totalEnergy[i*energySamples + j]/energyNormalization;
+        }
+        finalHeatEstimator += temporaryHeat/energyNormalization;
+        finalHeatEstimatorSquared += std::pow(temporaryHeat,2)/energyNormalization;
+    }
+    double heatNormalization = heatSamples;
+    finalHeatEstimator /= heatNormalization;
+    finalHeatEstimatorSquared /= heatNormalization;
+    double heatDeviation = finalHeatEstimatorSquared - std::pow(finalHeatEstimator,2);
+    heatDeviation = std::sqrt(heatDeviation/heatSamples);
+    return std::make_tuple(finalHeatEstimator, heatDeviation);
+
+};
 
 
 // Prints averages of counted values
@@ -65,9 +89,14 @@ void Measurer::printAvg(double temperature){
         totHeat+=totalHeat[i];
         totH2+=totalH2[i];
     }
-    double normalization = samplesNumber * latticeSize * latticeSize;
+    double normalization = double(samplesNumber * latticeSize * latticeSize);
     totEnergy/=normalization;
+    double varEnergy =totH2 / normalization - totEnergy * totEnergy;
     totMag/=normalization;
-    totHeat = (totH2 / normalization - totEnergy * totEnergy)/(temperature * temperature);
-    std::cout << totEnergy << "," << totMag << "," << totHeat << ","  << temperature << "\n";
-}
+    varEnergy= sqrt(varEnergy/samplesNumber);
+    // totHeat = varEnergy/(temperature*temperature);
+    double heatDev = 0.0;
+    std::tie(totHeat, heatDev) = measureHeat(temperature); 
+    // << ","  << heatDev
+    std::cout << totEnergy << "," << varEnergy << "," << totMag << "," << totHeat << ","  << temperature << "\n";
+};

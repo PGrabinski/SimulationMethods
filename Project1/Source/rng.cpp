@@ -1,5 +1,18 @@
 #include "rng.h"
 /* Code taken from the lecture resources */
+RNG::RNG(){
+  two24 = 16777216;
+  twom24 = 1.0/16777216.0;
+  twom12 = 1.0/4096.0;
+};
+
+RNG::RNG(int lux){
+  two24 = 16777216;
+  twom24 = 1.0/16777216.0;
+  twom12 = 1.0/4096.0;
+  long newSeed = 42;
+  setseeds(newSeed, lux);
+};
 
 void RNG::setseeds(long seed, int lux){
   const long e_a= 40014,

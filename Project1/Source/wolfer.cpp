@@ -1,18 +1,39 @@
 #include "wolfer.h"
-#include <gsl/gsl_rng.h>
-#include <cmath>
 #include "lattice.h"
 #include "helper.h"
 #include "measurer.h"
-#include <iostream>
+#include "rng.h"
 
-Wolfer::Wolfer(int samples, gsl_rng * r){
+#include <gsl/gsl_rng.h>
+#include <cmath>
+#include <iostream>
+#include <string>
+
+Wolfer::Wolfer(int samples, std::string rng){
     samplesPerTemperature = samples;
-    lattice = Lattice();
     helper = Helper();
     measurer = Measurer(samplesPerTemperature);
-    s = r;
     latticeSize = lattice.getLatticeSize();
+    if(rng == "rnlx0"){
+      s = NULL;
+      r = RNG(0);
+      lattice = Lattice(r);
+    } else if(rng == "mt"){
+      s = gsl_rng_alloc(gsl_rng_mt19937);
+      lattice = Lattice(s);
+    } else if(rng == "r250"){
+      s = gsl_rng_alloc(gsl_rng_r250);
+      lattice = Lattice(s);
+    }
+    
+};
+
+double Wolfer::getProbability(){
+  if(s == NULL){
+    return r.rnlx();
+  } else {
+    return gsl_rng_uniform(s);
+  }
 };
 
 void Wolfer::updateProbability(){
@@ -54,7 +75,7 @@ void Wolfer::addConnection(int xPosition, int yPosition, int xMove, int yMove){
   }
   if(helper.getNode(xPosition, yPosition, 0) == 2) return;
 
-  if(gsl_rng_uniform(s) < probability ){
+  if(getProbability() < probability ){
 
     if((currentSpin == lattice.getNode((xPosition-xMove+latticeSize)%latticeSize, (yPosition-yMove+latticeSize)%latticeSize)
       && helper.getNode(xPosition, yPosition, track(xMove,yMove))==1)){
@@ -81,15 +102,15 @@ void Wolfer::timeControl(double temperature){
         helper.clearHelpers();
 
         // Number of time steps for thermalisation
-        int N = 1000;
+        int N = 100;
 
         // Temp variables for (x,y) of the begining node
         int tempX;
         int tempY;
 
         for(int i=0;i<N;i++){
-            tempX = (int) (latticeSize * gsl_rng_uniform(s));
-            tempY = (int) (latticeSize * gsl_rng_uniform(s));
+            tempX = (int) (latticeSize * getProbability());
+            tempY = (int) (latticeSize * getProbability());
             addConnection(tempX,tempY,-10,-10);
             helper.flipMarkedSpins(lattice);
             helper.clearHelpers();

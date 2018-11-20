@@ -1,6 +1,6 @@
 #ifndef MEASURER_H
 #define MEASURER_H
-
+#include <tuple>
 #include "lattice.h"
 class Measurer{
     private:
@@ -15,6 +15,7 @@ class Measurer{
         double * totalHeat;
         // Total H^2
         double * totalH2;
+        std::tuple<double, double> measureHeat(double temperature);
     public:
         Measurer();
         Measurer(int samplesNumber);
