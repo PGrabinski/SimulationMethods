@@ -6,11 +6,15 @@
 #include "rng.h"
 
 class Lattice{
+    // Class encapsulating the lattice of the Ising model
+    // It consists of a square array with values 1/-1 and methods for its usage
     private:
         // Size of the square lattice (LxL)
         static const int latticeSize = 16;
         // Array of the LxL lattice values -1(down) or 1(up)
         int latticeArray[latticeSize][latticeSize];
+
+        // Two possible RNGs
         gsl_rng * r;
         RNG rng;
     public:

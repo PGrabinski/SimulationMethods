@@ -4,22 +4,37 @@
 #include "lattice.h"
 class Measurer{
     private:
-        int samplesNumber;
+        int configurations;
+        int heatSamples;
         Lattice lattice;
         int latticeSize;
+
         // Total energy of the system
-        double * totalEnergy;
+        double totalEnergy;
         // Total magnetization
-        double * totalMagnetization;
-        // Total H^2
-        double * totalH2;
-        // std::tuple<double, double> measureHeat(double temperature, double heat);
+        double totalMagnetization;
+        // Total EnergySquared
+        double totalEnergySquared;
+        // Total Heat
+        double totalHeat;
+        // Total HeatSquared
+        double totalHeatSquared;
+
+        // Sample energy of the system
+        double sampleEnergy;
+        // Sample magnetization
+        double sampleMagnetization;
+        // Sample H^2
+        double sampleEnergySquared;
+
     public:
         Measurer();
-        Measurer(int samplesNumber);
-        void measureObservables(Lattice& lattice, double temperature, int step);
+        Measurer(int configurations, int heatSamples);
+        void measureSingleConfigurationObservables(Lattice& lattice, double temperature, int step);
         double measureEnergyDif(int xPosition, int yPosition, Lattice& lattice);
+        void measureBatchObservables(double temperature);
         void printAvg(double temperature);
+        void eraseObservables();
         
 };
 #endif

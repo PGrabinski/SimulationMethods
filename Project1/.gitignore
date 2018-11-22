@@ -1,5 +1,2 @@
-kolory.cpp
-*.pdf
-*.dat
-sim
-kolory
+*.o
+Project1/wolf_sim
