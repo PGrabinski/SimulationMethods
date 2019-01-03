@@ -12,10 +12,10 @@ class Wolfer
 {
   private:
     // Number of steps used for thermalisations
-    static const int thermalisationSamples = 100;
+    static const int thermalisationSamples = 1000;
 
     // Number of steps used for transitions between measured configurations
-    static const int transitionSteps = 10;
+    static const int transitionSteps = 1;
 
     // Number of samples for Heat measurement
     static const int heatSamples = 1000;

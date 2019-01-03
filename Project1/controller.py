@@ -18,7 +18,7 @@ def runProcess(cmd):
 
 
 csv_text = 'RNG,SamplesPower,Energy,EnergyDev,Magnetization,Heat,HeatDev,Temperature\n'
-for samples in [10**j for j in range(5, 6)]:
+for samples in [10**j for j in range(6, 7)]:
     for i in rngs:
         for line in runProcess(['./wolf_sim', str(i), str(samples), 'point']):
             text = line.decode().split('\n')[0]

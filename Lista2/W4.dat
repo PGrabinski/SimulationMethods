@@ -1,0 +1,21 @@
+For N=1 the probability is: 0.149363
+For N=2 the probability is: 0.224024
+For N=3 the probability is: 0.224031
+For N=4 the probability is: 0.168036
+For N=5 the probability is: 0.10083
+For N=6 the probability is: 0.0504169
+For N=7 the probability is: 0.0216027
+For N=8 the probability is: 0.00810739
+For N=9 the probability is: 0.002699
+For N=10 the probability is: 0.000809241
+For N=11 the probability is: 0.000220601
+For N=12 the probability is: 5.553e-05
+For N=13 the probability is: 1.2768e-05
+For N=14 the probability is: 2.767e-06
+For N=15 the probability is: 5.8e-07
+For N=16 the probability is: 8.9e-08
+For N=17 the probability is: 1.3e-08
+For N=18 the probability is: 2e-09
+For N=19 the probability is: 0
+For N>19 the probability is: 0
+The expectation value is: 3.00007

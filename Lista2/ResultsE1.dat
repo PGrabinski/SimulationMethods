@@ -1,0 +1,49 @@
+Expected values:
+The sin(x) integral on [0,pi/2] by WolframAlpha: 1
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: by WolframAlpha: 0.949497
+The exp((x+y)^2) integral on [0,1]^2 by WolframAlpha: 4.89916
+For N equal: 10(10^1) 
+The sin(x) integral on [0,pi/2]: 1.14847 with statistical error: 0.188355
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 1.22893 with statistical error: 0.369634
+The exp((x+y)^2) integral on [0,1]^2: 3.24011 with statistical error: 1.14859
+
+For N equal: 100(10^2) 
+The sin(x) integral on [0,pi/2]: 0.924956 with statistical error: 0.0374128
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 1.01531 with statistical error: 0.116228
+The exp((x+y)^2) integral on [0,1]^2: 5.60434 with statistical error: 0.881902
+
+For N equal: 1000(10^3) 
+The sin(x) integral on [0,pi/2]: 0.995919 with statistical error: 0.0151929
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 0.954298 with statistical error: 0.0342191
+The exp((x+y)^2) integral on [0,1]^2: 4.88009 with statistical error: 0.220939
+
+For N equal: 10000(10^4) 
+The sin(x) integral on [0,pi/2]: 0.996378 with statistical error: 0.00478579
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 0.948202 with statistical error: 0.0106764
+The exp((x+y)^2) integral on [0,1]^2: 4.92078 with statistical error: 0.074564
+
+For N equal: 100000(10^5) 
+The sin(x) integral on [0,pi/2]: 1.00019 with statistical error: 0.00152548
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 0.949862 with statistical error: 0.00340285
+The exp((x+y)^2) integral on [0,1]^2: 4.87958 with statistical error: 0.0232731
+
+For N equal: 1000000(10^6) 
+The sin(x) integral on [0,pi/2]: 1.00028 with statistical error: 0.000483704
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 0.950493 with statistical error: 0.00107542
+The exp((x+y)^2) integral on [0,1]^2: 4.9062 with statistical error: 0.00740295
+
+For N equal: 10000000(10^7) 
+The sin(x) integral on [0,pi/2]: 0.999928 with statistical error: 0.000152852
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 0.949378 with statistical error: 0.000339955
+The exp((x+y)^2) integral on [0,1]^2: 4.89867 with statistical error: 0.00233714
+
+For N equal: 100000000(10^8) 
+The sin(x) integral on [0,pi/2]: 1.00002 with statistical error: 4.83437e-05
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 0.94954 with statistical error: 0.000107524
+The exp((x+y)^2) integral on [0,1]^2: 4.89971 with statistical error: 0.000739088
+
+For N equal: 1000000000(10^9) 
+The sin(x) integral on [0,pi/2]: 1 with statistical error: 1.5287e-05
+The 1/sqrt(2*pi)*exp(-0.5*x^2) integral on [0,1.64]: 0.949476 with statistical error: 3.39973e-05
+The exp((x+y)^2) integral on [0,1]^2: 4.89906 with statistical error: 0.000233688
+

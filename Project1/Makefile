@@ -1,5 +1,5 @@
 output: main.o helper.o lattice.o rng.o measurer.o wolfer.o
-	g++ Source/*.o -std=c++17 -lgsl -lm -lgslcblas -fopenmp -o wolf_sim
+	g++ Source/*.o -std=c++17 -lgsl -lm -lgslcblas  -o wolf_sim
 
 main.o: Source/main.cpp
 	g++ -c Source/main.cpp -std=c++17 -lgsl -lm -lgslcblas -o Source/main.o

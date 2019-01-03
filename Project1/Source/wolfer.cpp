@@ -126,7 +126,8 @@ void Wolfer::addConnection(int xPosition, int yPosition, int xMove, int yMove)
 void Wolfer::thermaliseLattice()
 {
   for (int i = 0; i < thermalisationSamples; i++)
-  {
+  { 
+    // std::cout << i << ',' << measurer.currentEnergy(lattice) << '\n';
     generateCluster();
   }
 };

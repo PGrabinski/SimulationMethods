@@ -100,3 +100,19 @@ void Measurer::printAvg(double temperature)
 
     std::cout << totalEnergy << "," << statisticalErrorEnergy << "," << totalMagnetization << "," << totalHeat << "," << statisticalErrorHeat << "," << temperature << "\n";
 };
+
+double Measurer::currentEnergy(Lattice &lattice)
+{
+    double singleConfiguratioEnergy = 0.0;
+    int tempSpin = 0;
+    for (int i = 0; i < latticeSize; i++)
+    {
+        for (int j = 0; j < latticeSize; j++)
+        {
+            tempSpin = lattice.getNode(i, j);
+            singleConfiguratioEnergy += measureEnergyDif(i, j, lattice);
+        }
+    }
+    return singleConfiguratioEnergy / std::pow(latticeSize,2);
+    
+}

@@ -35,6 +35,6 @@ class Measurer{
         void measureBatchObservables(double temperature);
         void printAvg(double temperature);
         void eraseObservables();
-        
+        double currentEnergy(Lattice &lattice);        
 };
 #endif
