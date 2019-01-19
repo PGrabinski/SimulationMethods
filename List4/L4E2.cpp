@@ -12,7 +12,7 @@ and the lambda is chosen in order to minimize the c constant.
 A change of variables was performed, in order to obtain a dimensionless variable.
 To retrieve the real physical features, we multiply the resulting numbers by the appropiate factor. 
 */
-const double ELIMINATION_C = 40.23;
+const double ELIMINATION_C = 2.51;
 
 const double LAMBDA = 0.8165;
 
